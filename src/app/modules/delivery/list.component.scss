@@ -1,0 +1,182 @@
+/**
+ * @file list.component.scss
+ * @description Estilos para o componente de lista de entregas
+ */
+
+/**
+ * Container principal da lista de entregas
+ * @description Define o layout e o posicionamento do container principal
+ */
+.delivery-list-container {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 20px;
+}
+
+/**
+ * Fundo animado
+ * @description Cria um fundo gradiente animado para o container
+ */
+.animated-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, #ff7e00, #ff3700, #ffb700);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+  z-index: -1;
+}
+
+/**
+ * Animação do gradiente
+ * @description Define a animação do fundo gradiente
+ */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/**
+ * Cartão de entrega
+ * @description Estiliza o cartão que contém as informações de entrega
+ */
+.delivery-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 126, 0, 0.2));
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 126, 0, 0.3));
+  }
+
+  .mat-card-header {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 16px;
+  }
+
+  .mat-card-title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+    color: #ff3700;
+  }
+
+  .mat-card-content {
+    padding: 16px;
+    padding-top: 0;
+  }
+
+  /**
+   * Estilos específicos para componentes Angular Material
+   * @description Customiza a aparência dos componentes Angular Material dentro do cartão
+   */
+  ::ng-deep {
+    .mat-mdc-table {
+      background: transparent;
+    }
+
+    .mat-mdc-row, .mat-mdc-header-row {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .mat-mdc-row:nth-child(even) {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .mat-mdc-cell, .mat-mdc-header-cell {
+      color: #333;
+      border-bottom-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .mat-mdc-paginator {
+      background: transparent;
+    }
+
+    .mat-mdc-form-field {
+      width: 100%;
+      margin-bottom: 16px;
+    }
+
+    .mat-mdc-text-field-wrapper {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+    }
+
+    .mat-mdc-form-field-flex {
+      padding: 0 12px;
+    }
+
+    .mat-mdc-form-field-infix {
+      padding: 12px 0;
+    }
+
+    input.mat-mdc-input-element {
+      color: #333;
+    }
+
+    .mat-mdc-form-field-label {
+      color: rgba(0, 0, 0, 0.6);
+    }
+
+    .mat-mdc-form-field-underline {
+      background-color: rgba(0, 0, 0, 0.12);
+    }
+
+    .mat-mdc-form-field-ripple {
+      background-color: #ff3700;
+    }
+  }
+}
+
+/**
+ * Seção de filtros
+ * @description Define o layout da seção de filtros
+ */
+.filter-section {
+  display: flex;
+  gap: 20px;
+}
+
+/**
+ * Campo de formulário
+ * @description Estiliza os campos de formulário dentro da seção de filtros
+ */
+mat-form-field {
+  flex: 1;
+}
+
+/**
+ * Estilos globais para campos de formulário Angular Material
+ * @description Ajusta o espaçamento e o alinhamento dos campos de formulário
+ */
+::ng-deep .mat-mdc-form-field {
+  .mat-mdc-text-field-wrapper {
+    padding-top: 16px;
+  }
+
+  .mat-mdc-form-field-flex {
+    padding-top: 0;
+  }
+
+  .mat-mdc-form-field-infix {
+    padding-top: 8px;
+  }
+
+  .mat-mdc-select-value {
+    padding-top: 8px;
+  }
+}

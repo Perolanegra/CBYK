@@ -1,0 +1,38 @@
+<div class="delivery-list-container">
+  <div class="animated-background"></div>
+  <mat-card class="delivery-card">
+    <mat-card-header>
+      <mat-card-title>Lista de Entregas</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="filter-section">
+        <mat-form-field>
+          <mat-label>Motorista</mat-label>
+          <mat-select [(ngModel)]="selectedDriver" (selectionChange)="applyFilters()">
+            <mat-option value="">Todos</mat-option>
+            <mat-option *ngFor="let driver of drivers" [value]="driver">
+              {{driver}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Status da Entrega</mat-label>
+          <mat-select [(ngModel)]="selectedStatus" (selectionChange)="applyFilters()">
+            <mat-option value="">Todos</mat-option>
+            <mat-option *ngFor="let status of deliveryStatuses" [value]="status">
+              {{status}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <app-table
+        [data]="filteredDeliveries"
+        [columns]="columns"
+        [displayedColumns]="displayedColumns"
+        [hasTableSearch]="false"
+      >
+      </app-table>
+    </mat-card-content>
+  </mat-card>
+</div>

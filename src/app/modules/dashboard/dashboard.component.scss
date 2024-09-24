@@ -1,0 +1,166 @@
+/**
+ * Estilos do Componente Dashboard
+ * Este arquivo contém os estilos para o componente do painel.
+ */
+
+/**
+ * Contêiner do painel
+ * Contêiner flexbox para cartões do painel com espaçamento e preenchimento
+ */
+.dashboard-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/**
+ * Cartão do painel
+ * Estilos para cartões individuais do painel
+ */
+.dashboard-card {
+  flex: 1 1 calc(33.333% - 20px);
+  min-width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 126, 0, 0.2));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/**
+ * Efeito de hover no cartão do painel
+ */
+.dashboard-card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 126, 0, 0.3));
+}
+
+/**
+ * Cabeçalho do cartão Material
+ */
+.mat-card-header {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 16px;
+}
+
+/**
+ * Título do cartão Material
+ */
+.mat-card-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: #ff3700;
+}
+
+/**
+ * Conteúdo do cartão Material
+ */
+.mat-card-content {
+  padding: 16px;
+}
+
+/**
+ * Fundo animado
+ * Cria uma animação de gradiente para o fundo do painel
+ */
+.animated-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, #ff7e00, #ff3700, #ffb700);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+  z-index: -1;
+}
+
+/**
+ * Keyframes da animação do gradiente
+ */
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/**
+ * Estilos profundos para componentes Material dentro dos cartões do painel
+ */
+.dashboard-card {
+  ::ng-deep {
+    /**
+     * Estilos da tabela Material
+     */
+    .mat-mdc-table {
+      background: transparent;
+    }
+
+    .mat-mdc-row, .mat-mdc-header-row {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .mat-mdc-row:nth-child(even) {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .mat-mdc-cell, .mat-mdc-header-cell {
+      color: #333;
+      border-bottom-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .mat-mdc-paginator {
+      background: transparent;
+    }
+
+    /**
+     * Estilos do campo de formulário Material
+     */
+    .mat-mdc-form-field {
+      width: 100%;
+      margin-bottom: 16px;
+    }
+
+    .mat-mdc-text-field-wrapper {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+    }
+
+    .mat-mdc-form-field-flex {
+      padding: 0 12px;
+    }
+
+    .mat-mdc-form-field-infix {
+      padding: 12px 0;
+    }
+
+    input.mat-mdc-input-element {
+      color: #333;
+    }
+
+    .mat-mdc-form-field-label {
+      color: rgba(0, 0, 0, 0.6);
+    }
+
+    .mat-mdc-form-field-underline {
+      background-color: rgba(0, 0, 0, 0.12);
+    }
+
+    .mat-mdc-form-field-ripple {
+      background-color: #ff3700;
+    }
+  }
+}
+
+/**
+ * Ajuste de preenchimento do conteúdo do cartão Material
+ */
+.mat-mdc-card-content {
+  padding-top: 0;
+}
