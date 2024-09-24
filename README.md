@@ -90,4 +90,35 @@ Para iniciar o servidor de desenvolvimento:
 
 ## Testes
 
-Execute testes unitários com:
+Para executar os testes unitários e verificar a cobertura de código, siga estas etapas:
+
+1. Execute o comando de teste com cobertura:
+   ```
+   npm run test
+   ```
+
+2. Este comando executará todos os testes unitários e gerará um relatório de cobertura.
+
+3. Após a conclusão dos testes, você verá um resumo da cobertura no terminal, semelhante a este:
+   ```
+   --------------------|---------|----------|---------|---------|-------------------
+   File                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+   --------------------|---------|----------|---------|---------|-------------------
+   All files           |   85.71 |    83.33 |   88.89 |   85.71 |                   
+    app.component.ts   |     100 |      100 |     100 |     100 |                   
+    ...                |   ...   |    ...   |   ...   |   ...   | ...
+   --------------------|---------|----------|---------|---------|-------------------
+   ```
+
+4. Para uma visualização mais detalhada, abra o arquivo de relatório HTML gerado:
+   - Navegue até a pasta `coverage` na raiz do projeto.
+   - Abra o arquivo `index.html` em seu navegador.
+
+5. Este relatório HTML fornece uma visão interativa e detalhada da cobertura de código, permitindo que você explore quais partes do código estão cobertas pelos testes e quais precisam de mais atenção.
+
+6. Lembre-se de que o projeto está configurado com um limiar mínimo de cobertura de 80% para branches, funções, linhas e declarações. Se a cobertura cair abaixo desse limiar, o comando de teste falhará, indicando áreas que precisam de mais testes.
+
+7. Para adicionar ou modificar testes, navegue até a pasta correspondente ao componente ou serviço que você está testando e procure por arquivos com a extensão `.spec.ts`.
+
+Manter uma boa cobertura de testes é essencial para garantir a qualidade e a confiabilidade do código. Certifique-se de escrever testes para novas funcionalidades e manter os testes existentes atualizados conforme o código evolui.
+
