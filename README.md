@@ -92,7 +92,7 @@ Para iniciar o servidor de desenvolvimento:
 
 Para executar os testes unitários e verificar a cobertura de código, siga estas etapas:
 
-1. Execute o comando de teste com cobertura:
+1. Execute o comando de teste com cobertura já configurado no package.json:
    ```
    npm run test
    ```
