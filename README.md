@@ -47,7 +47,7 @@ Para iniciar o servidor de desenvolvimento:
    npm run start
    ```
 
-3. Aguarde a compilação ser concluída. Você deverá ver uma mensagem como "** Angular Live Development Server está ouvindo em localhost:4200, abra seu navegador em http://localhost:4200/ **".
+3. Aguarde a compilação ser concluída. Você deverá ver uma mensagem como **Angular Live Development Server está ouvindo em localhost:4200, abra seu navegador em http://localhost:4200/**.
 
 4. Abra seu navegador web e navegue até `http://localhost:4200/`.
 
