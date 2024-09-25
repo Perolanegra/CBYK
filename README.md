@@ -27,7 +27,7 @@ Carrier é um aplicativo moderno de gerenciamento logístico baseado em Angular,
 
 1. Clone o repositório:
    ```
-   git clone https://github.com/seu-usuario/carrier.git
+   git clone https://github.com/perolanegra/carrier.git
    cd carrier
    ```
 
